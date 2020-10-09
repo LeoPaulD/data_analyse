@@ -1,6 +1,6 @@
 # data_analyse
 
-# Installation de MyWebIntelligencesous Linux 
+# Installation de MyWebIntelligence sous Linux 
 
 ## Installer Docker
 
