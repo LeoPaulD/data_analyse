@@ -82,7 +82,18 @@ Je construis mon image docker
 
 > sudo docker build -t mwiclient:1.0 .
 
-> docker run -p80:3000 --name mwiclient -v /Documents/DNHD-DATA/data:/app/data mwiclient:1.0
+je lance mon container pour que le voir dans mon navigateur :
+
+> sudo docker run -p80:3000 --name mwiclient -v /Documents/DNHD-DATA/data:/data mwiclient:1.0 .
+
+
+!!!!! Erreur !!!!!
+
+
+´´´´
+ docker: Error response from daemon: driver failed programming external connectivity on endpoint mwiclient (d3f8d015fa25b98935c1914a2c7156697c4dc01d1aedd4d04dd5632ae691151e): Error starting userland proxy: listen tcp 0.0.0.0:80: bind: address already in use.
+ERRO[0000] error waiting for container: context canceled 
+´´´´
 
 
 
