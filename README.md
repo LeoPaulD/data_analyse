@@ -82,7 +82,7 @@ Je construis mon image docker
 
 > sudo docker build -t mwiclient:1.0 .
 
-> docker run -p80:3000 --name mwiclient -v /Documents/DNHD-DATA/data:/app/data mwi:1.0
+> docker run -p80:3000 --name mwiclient -v /Documents/DNHD-DATA/data:/app/data mwiclient:1.0
 
 
 
