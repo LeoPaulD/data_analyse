@@ -120,6 +120,8 @@ je lance mon container pour que le voir dans mon navigateur :
 
 Petite astuce, faire clic droit sur le dossier DNHD_DATA, paramètres pour connaitre le chemin jusqu'à ce dossier
 
+Si votre port 80 est déjà encombrer par skype ou votre serveur local apache pensez à changer le port d'écoute par le port 8080 par exemple 
+
 > sudo docker run -p80:3000 --name mwiclient -v /home/leopaul/Documents/DNHD_DATA/data:/data mwiclient:1.0 
 
 
