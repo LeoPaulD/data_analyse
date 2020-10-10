@@ -1,8 +1,6 @@
-# data_analyse
-
 # Installation de MyWebIntelligence sous Linux 
 
-## Installer Docker
+## Installer GIT
 
 Référence du tutoriel : 
 
