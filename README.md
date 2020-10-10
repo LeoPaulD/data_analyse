@@ -6,6 +6,33 @@
 
 Référence du tutoriel : 
 
+https://www.atlassian.com/fr/git/tutorials/install-git
+
+Mettez à jour votre liste de packages existante 
+
+´´´console
+ sudo apt update 
+ 
+ ´´´
+
+Installer Git 
+
+> sudo apt-get install git
+
+Vérifier que git est installer et voir sa version
+
+> git --version
+
+Associer git à votre  nom et email github / bitbucket / gitlab ....
+
+> git config --global user.name "Votre nom"
+
+> git config --global user.email "votremail@mail.com"
+
+## Installer Docker
+
+Référence du tutoriel : 
+
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04-fr
 
 Mettez à jour votre liste de packages existante 
@@ -44,9 +71,12 @@ Le Docker devrait maintenant être installé, le démon démarré, et le process
 
 ### MyWebIntelligencePython 
 
+Référence du tutoriel :
+https://github.com/MyWebIntelligence/MyWebIntelligencePython
+
 Je souhaite cloner le projet dans mes documents, dans le dossier DNHD-DATA dans le terminal je tape :
 
-> cd Documents/DNHD-DATA
+> cd Documents/DNHD_DATA
 
 Puis je clone le projet sur ma machine (disposer des fichiers sur ma propre machine)
 
@@ -62,13 +92,19 @@ Je construis mon image docker
 
 je créais un chemin pour enregistrer mes données : 
 
-> sudo docker run -dit --name mwi -v /Documents/DNHD-DATA/data:/app/data mwi:1.0
+Petite astuce, faire clic droit sur le dossier DNHD_DATA, paramètres pour connaitre le chemin jusqu'à ce dossier
+
+> sudo docker run -dit --name mwi -v /home/leopaul/Documents/DNHD_DATA/data:/app/data mwi:1.0
 
 ### MyWebClient 
 
+Référence du tutoriel :
+https://github.com/MyWebIntelligence/MyWebClient
+
+
 Je souhaite cloner le projet dans mes documents, dans le dossier DNHD-DATA dans le terminal je tape :
 
-> cd Documents/DNHD-DATA
+> cd Documents/DNHD_DATA
 
 Puis je clone le projet sur ma machine (disposer des fichiers sur ma propre machine)
 
@@ -84,17 +120,9 @@ Je construis mon image docker
 
 je lance mon container pour que le voir dans mon navigateur :
 
-> sudo docker run -p80:3000 --name mwiclient -v /Documents/DNHD-DATA/data:/data mwiclient:1.0 .
+Petite astuce, faire clic droit sur le dossier DNHD_DATA, paramètres pour connaitre le chemin jusqu'à ce dossier
 
-
-!!!!! Erreur !!!!!
-
-
-´´´´
- docker: Error response from daemon: driver failed programming external connectivity on endpoint mwiclient (d3f8d015fa25b98935c1914a2c7156697c4dc01d1aedd4d04dd5632ae691151e): Error starting userland proxy: listen tcp 0.0.0.0:80: bind: address already in use.
-ERRO[0000] error waiting for container: context canceled 
-´´´´
-
+> sudo docker run -p80:3000 --name mwiclient -v /home/leopaul/Documents/DNHD_DATA/data:/data mwiclient:1.0 
 
 
 
