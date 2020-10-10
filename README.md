@@ -8,12 +8,12 @@ Référence du tutoriel :
 
 https://www.atlassian.com/fr/git/tutorials/install-git
 
+
 Mettez à jour votre liste de packages existante 
 
-´´´console
- sudo apt update 
- 
- ´´´
+> sudo apt update 
+
+
 
 Installer Git 
 
