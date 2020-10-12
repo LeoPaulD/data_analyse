@@ -125,6 +125,120 @@ Si votre port 80 est déjà encombrer par skype ou votre serveur local apache pe
 > sudo docker run -p80:3000 --name mwiclient -v /home/leopaul/Documents/DNHD_DATA/data:/data mwiclient:1.0 
 
 
+# Installer et utiliser Google BookMarklets 
+
+## Installation
+
+Informations sur l'outil.
+
+https://medialab.sciencespo.fr/outils/google-bookmarklets/
+
+
+Récupérer l'outil en le faison glisser dans sa barre de favoris.
+
+https://medialab.github.io/google-bookmarklets/
+
+
+## Utilisation 
+
+* Faire une recherche sur google 
+
+* Lancer ExtractGoogle depuis ses favoris
+
+* Récuprer les urls de sa recherche google. 
+
+* Télécharger le CSV de tous les urls collecté
+
+* Nettoyer ce fichier pour le rendre compatilble avec MyWebIntilligence 
+
+* Pendant le nettoyage, on ne récupère que la colonne url
+
+* On met toutes nos urls dans un fichier txt
+
+### Les bonnes pratiques :
+
+
+* Cibler sa recherche sur des dates précises, plus les extractions sont précises, mieux sont les résultats
+
+* Utiliser google trends pour trouver les péridodes les plus intéressante à chercher.
+
+
+
+# Utilisation de MyWebIntelligencePython
+
+Ouvrir le terminal de son conteneur docker qui porte comme nom mwi :
+
+> docker exec -it mwi bash
+
+## Créer un nouveau projet :
+
+Créer un nouveau projet, une nouvelle land
+
+> python mywi.py land create --name=LAND_NAME --desc=LAND_DESCRIPTION
+
+exemple :
+> python mywi.py land create --name=Branco --desc="Projet d'analyse de controverse sur Juan Branco et son livre crépuscule"
+
+Voir la liste des lands dans ce projet mwi
+
+> python mywi.py land list
+
+Créer un dictionnaire 
+
+> python mywi.py land addterm --land=LAND_NAME --terms=TERMS
+
+exemple 
+
+> python mywi.py land addterm --land=Branco --terms="Branco, crépuscule"
+
+Créer un liste d'urls 
+
+Manuellement 
+
+> python mywi.py land addurl --land=LAND_NAME --urls=URLS  
+
+exemple 
+
+> python mywi.py land addurl --land=Branco --urls="https://www.marianne.net/culture/crepuscule-juan-branco-livre-critique, https://www.franceculture.fr/emissions/signes-des-temps/de-quoi-crepuscule-de-juan-branco-est-il-le-signe"
+
+Avec un fichier txt 
+
+> python mywi.py land addurl --land=LAND_NAME --path=PATH
+
+exemple 
+
+> python mywi.py land addurl --land=Branco --path=data/Url_Branco.txt
+
+ Lancer le crowl 
+
+ > python mywi.py land crawl --name=LAND_NAME --limit=LIMIT
+
+ exemple 
+
+ > python mywi.py land crawl --name=Branco --limit=25
+
+
+Crowler le domaine :
+
+> python mywi.py domain crawl [--limit=LIMIT, --http=HTTP_STATUS]
+
+Exporter les lands :
+
+les différents type :
+
+> type = ['pagecsv', 'pagegexf', 'fullpagecsv', 'nodecsv', 'nodegexf', 'mediacsv']
+
+> python mywi.py land export --name=LAND_NAME --type=EXPORT_TYPE --minrel=MINIMUM_RELEVANCE
+
+exemple 
+
+Premier export minrel=0 pour avoir l'entierté des liens 
+
+Mais pour l'exploitation on peut commmencer à 3
+
+> python mywi.py land export --name=Branco --type=pagecsv --minrel=0
+
+
 
 
 
