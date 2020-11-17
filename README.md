@@ -170,6 +170,10 @@ Ouvrir le terminal de son conteneur docker qui porte comme nom mwi :
 
 > docker exec -it mwi bash
 
+Créer une base de donnée, si innexistante
+
+> python mywi.py db setup
+
 ## Créer un nouveau projet :
 
 Créer un nouveau projet, une nouvelle land
