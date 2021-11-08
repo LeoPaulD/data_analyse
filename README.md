@@ -172,7 +172,7 @@ Ouvrir le terminal de son conteneur docker qui porte comme nom mwi :
 
 Créer une base de donnée, si innexistante
 
-> python mywi.py db setup
+> python mwi.py db setup
 
 ## Créer un nouveau projet :
 
